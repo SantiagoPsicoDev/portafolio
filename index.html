@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santiagopsicodev | Autonomia Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-deep: #0a0e14;
+            --gold: #c5a059;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-deep);
+            background-image: radial-gradient(circle at 20% 30%, #16213e 0%, transparent 40%),
+                              radial-gradient(circle at 80% 70%, #1a1a2e 0%, transparent 40%);
+            color: var(--text-main);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin: 0;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff, var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        .container { max-width: 1100px; margin: auto; padding: 4rem 2rem; }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .grid-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card-premium {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-premium:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .card-premium h3 {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        .epf-badge {
+            background: linear-gradient(45deg, var(--gold), #f3e5ab);
+            color: black;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: var(--gold);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-deep);
+            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3);
+            text-decoration: none;
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+
+        .btn-whatsapp:hover { transform: scale(1.1) rotate(10deg); }
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
+        }
+        .logo-img {
+            max-width: 150px;
+            height: auto;
+        }
+.logo-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-premium {
+    max-width: 180px; 
+    height: auto;
+  
+    filter: drop-shadow(0 0 15px rgba(197, 160, 89, 0.4));
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+
+.logo-premium:hover {
+    filter: drop-shadow(0 0 25px rgba(197, 160, 89, 0.8));
+    transform: scale(1.05);
+}
+.sobre-mi-premium {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+    padding: 0 2rem;
+}
+
+.contenido-texto {
+    flex: 2;
+}
+
+.titulo-seccion {
+    text-align: left !important;
+    margin-bottom: 2.5rem;
+}
+
+.bio-container {
+    border-left: 1px solid var(--gold); 
+    padding-left: 2rem;
+}
+
+.p-destacado {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+}
+
+.p-secundario {
+    font-size: 1rem;
+    color: #999;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+
+.mision-card {
+    flex: 1;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    align-self: center; 
+}
+
+.mision-label {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.mision-texto {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: white;
+}
+
+.scroll-item {
+    opacity: 0;
+    transform: translateY(50px); 
+    transition: all 1s cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+}
+
+.scroll-item.aparecer {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+
+.mision-card.scroll-item {
+    transition-delay: 0.3s;
+}
+
+        @media (max-width: 768px) {
+            header {
+                height: 60vh;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem; 
+            }
+
+            .sobre-mi-premium {
+                flex-direction: column; 
+                gap: 2rem;
+                margin-top: 5rem;
+                padding: 0 1rem;
+            }
+
+            .bio-container {
+                border-left: none;
+                padding-left: 0;
+                text-align: center; 
+            }
+            
+            .titulo-seccion {
+                text-align: center !important;
+            }
+
+            .mision-card {
+                width: 100%; 
+                box-sizing: border-box; 
+            }
+        }
+        footer {
+        margin-top: 8rem; 
+        padding: 4rem 0 2rem; 
+        text-align: center;
+        border-top: 1px solid var(--glass-border); 
+        background: linear-gradient(to top, #05070a 0%, transparent 100%);
+    }
+
+    .firma-final {
+        font-family: 'Playfair Display', serif; 
+        font-size: 2rem;
+        color: var(--gold);
+        margin: 0;
+        letter-spacing: 1px;
+        text-shadow: 0 0 15px rgba(197, 160, 89, 0.3); 
+    }
+
+    .sub-firma {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem;
+        color: #555;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-top: 10px;
+    }
+    </style>
+</head>
+<body>
+
+        <header>
+        <div class="logo-container">
+            <img src="favicon.png" alt="Logo SantiagoPsicoDev" class="logo-premium">
+            </div>
+        <div class="hero">
+            <h1>SantiagoPsicoDev</h1>
+            <p>Autonomia Digital</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="filosofia">
+            <h2>Desarrollo Web / Grafico</h2>
+            <div class="card-premium" style="text-align: center; max-width: 800px; margin: auto;">
+                <p style="font-size: 1.2rem; line-height: 2;">Constuyo sitios webs para todo tipo de profesiones, empredimientos y tiendas virtuales en codigo <strong>HTML, CSS y JS</strong></p>
+            </div>
+        </section>
+
+        <section id="proyectos" style="margin-top: 8rem;">
+            <h2>Casos de Estudio</h2>
+            
+            <div class="grid-premium">
+
+                <div class="card-premium">
+                    <span class="epf-badge">DESARROLLO WEB</span>
+                    <h3>Psicóloga Ana Laura Alemán Chávez</h3>
+                    <p>Diseño total enfocado en el conectar con los pacientes.</p>
+                    <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 20px 0;">
+                    <a href="https://anapsicologa.github.io/PsicologaAnaLaura/" style="color: white; text-decoration: none; font-size: 0.9rem; font-weight: bold;">EXPLORAR PROYECTO →</a>
+                </div>
+
+                <div class="card-premium">
+                    <span class="epf-badge">SEO & MAPS</span>
+                    <h3>Posicionamiento Psicóloga</h3>
+                    <p>Dominio total de búsquedas locales para profesionales independientes.</p>
+                    <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 20px 0;">
+                    <a href="https://maps.app.goo.gl/B3Q1EVgGUq31cLV29" style="color: white; text-decoration: none; font-size: 0.9rem; font-weight: bold;">EXPLORAR PROYECTO →</a>
+                </div>
+
+                <div class="card-premium">
+                    <span class="epf-badge">E.P.F. LANDING</span>
+                    <h3>Proyecto Propio</h3>
+                    <p>Pagina web de proyecto propio en psicólogia.</p>
+                    <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 20px 0;">
+                    <a href="https://santiagopsicodev.github.io/santiagopsicodev/" style="color: white; text-decoration: none; font-size: 0.9rem; font-weight: bold;">EXPLORAR PROYECTO →</a>
+                </div>
+
+                <div class="card-premium">
+                    <span class="epf-badge">DESARROLLO DE TIENDA</span>
+                    <h3>Prueba de una tienda virtual funcional</h3>
+                    <p>Tienda virtual en funcionamiento para su prueba.</p>
+                    <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 20px 0;">
+                    <a href="https://santiagopsicodev.github.io/prueba_tienda/" style="color: white; text-decoration: none; font-size: 0.9rem; font-weight: bold;">EXPLORAR PROYECTO →</a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+<section id="sobre-mi" class="sobre-mi-premium">
+    <div class="contenido-texto scroll-item">
+        <h2 class="titulo-seccion">Detrás de las Sombras</h2>
+        <div class="bio-container">
+            <p class="p-destacado">
+                Soy un apasionado de la tecnología que cree firmemente que el mundo digital puede ser más humano.
+            </p>
+            <p class="p-secundario">
+                Mi camino me ha llevado a fusionar dos mundos: el <strong>desarrollo web</strong> y la <strong>psicología humanista</strong>.
+            </p>
+            <p class="p-secundario">
+                A través de mi técnica <strong>E.P.F.</strong>, ayudo a profesionales de la salud mental a construir espacios donde la confianza es el primer paso.
+            </p>
+        </div>
+    </div>
+
+    <div class="mision-card scroll-item">
+        <span class="mision-label">Misión</span>
+        <p class="mision-texto">"Humanizar la presencia digital, un proyecto a la vez."</p>
+    </div>
+</section>
+    <a href="https://wa.me/525531233032" class="btn-whatsapp">
+        <svg width="30" height="30" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+    </a>
+<script>
+
+    const observerOptions = {
+        root: null,
+        threshold: 0.2,
+        rootMargin: "0px"
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+               
+                entry.target.classList.add('aparecer');
+               
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+
+    const elementosParaAnimar = document.querySelectorAll('.scroll-item');
+    elementosParaAnimar.forEach(el => {
+        observer.observe(el);
+    });
+</script>
+<footer>
+        <div class="footer-content">
+            <p class="firma-final">SantiagoPsicoDev</p>
+            <p class="sub-firma">@2026 | Autonomia Digital</p>
+        </div>
+    </footer>
+</body>
+</html>
